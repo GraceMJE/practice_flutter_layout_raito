@@ -16,19 +16,52 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
-        Container(width: 50, height: 200, color: Colors.red,),
-        Expanded(child: Container(color: Colors.green, width: 100,),),
-        Flexible(flex: 1, child: Container(color: Colors.blue, width: 100,)),
-        // Flexible(flex: 1, child: Container(color: Colors.red, )),
-        // Flexible(flex: 2, child: Container(color: Colors.blue, )),
-        // Flexible(flex: 3, child: Container(color: Colors.green, )),
-        // Flexible(flex: 4, child: Container(color: Colors.yellow, )),
-        // Flexible 차지할 수 있는 공간의 최대 한도 차지
-        // flex 키워드로 비율 조정 가능!
-        // Flexible은 내부객체 설정값에 영향 받음
-        // Expanded는 내부객체 설정값에 영향 X
+        Container(width: 100, height: 100,
+          color: Colors.red,
+          margin: const EdgeInsets.symmetric(vertical: 8),),
+        // Expanded(child: Container(color: Colors.blue,)),
+        // Expanded; 높이가 명시적으로 정해지지 않은 widget
+        Container(width: 100, height: 100,
+          color: Colors.red,
+          margin: const EdgeInsets.symmetric(vertical: 8),),
+        Expanded(
+          child: Container(width: 100, height: 100,
+            color: Colors.red,
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(color: Colors.blue,
+                    height: 50, width: 50,
+                    margin: const EdgeInsets.symmetric(vertical: 6),),
+                  Container(color: Colors.blue,
+                    height: 50, width: 50,
+                    margin: const EdgeInsets.symmetric(vertical: 6),),
+                  Container(color: Colors.blue,
+                    height: 50, width: 50,
+                    margin: const EdgeInsets.symmetric(vertical: 6),),
+                  Container(color: Colors.blue,
+                    height: 50, width: 50,
+                    margin: const EdgeInsets.symmetric(vertical: 6),),
+                  Container(color: Colors.blue,
+                    height: 50, width: 50,
+                    margin: const EdgeInsets.symmetric(vertical: 6),),
+                ],
+              ),
+            ),
+          ),
+        ),
+        Container(width: 100, height: 100,
+          color: Colors.red,
+          margin: const EdgeInsets.symmetric(vertical: 8),),
+        Container(width: 100, height: 100,
+          color: Colors.red,
+          margin: const EdgeInsets.symmetric(vertical: 8),),
+        Container(width: 100, height: 100,
+          color: Colors.red,
+          margin: const EdgeInsets.symmetric(vertical: 8),),
       ],
     );
   }
